@@ -4,8 +4,8 @@ import { FaFacebookSquare, FaInstagramSquare, FaPinterestSquare } from 'react-ic
 const Footer = () => {
 
     return (
-        <div style={{ boxShadow: '0 -8px 10px -5px rgba(0, 0, 0, 0.4)' }}>
-            <footer className="c-container footer footer-horizontal footer-center text-base-content rounded p-10" >
+        <div className='bg-[#EEEEEE] py-10' style={{ boxShadow: '0 -8px 10px -5px rgba(0, 0, 0, 0.4)' }}>
+            <footer className="c-container gap-5 footer footer-horizontal footer-center  rounded p-10 text-[#11224E]" >
                 <nav className="grid grid-flow-col gap-4 text-xl">
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
@@ -13,9 +13,9 @@ const Footer = () => {
                 </nav>
                 <nav>
                     <div className="grid grid-flow-col gap-4 text-4xl">
-                        <FaInstagramSquare className='text-yellow-500' />
-                        <FaFacebookSquare  className='text-yellow-500'/>
-                        <FaPinterestSquare  className='text-yellow-500'/>
+                        <FaInstagramSquare className='text-[#11224E]' />
+                        <FaFacebookSquare  className='text-[#11224E]'/>
+                        <FaPinterestSquare  className='text-[#11224E]'/>
                     </div>
                 </nav>
                 <aside>

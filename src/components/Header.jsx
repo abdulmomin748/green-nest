@@ -10,10 +10,10 @@ const Header = () => {
         </>
     );
     return (
-        <div className='' style={{ boxShadow: '0 8px 10px -5px rgba(0, 0, 0, 0.4)' }}>
+        <div className='bg-[#EEEEEE] text-[#11224E]' style={{ boxShadow: '0 8px 10px -5px rgba(0, 0, 0, 0.4)' }}>
         <div className='c-container'>
             <div className="navbar">
-                
+
                 <div className="navbar-start">
                     <img  className='w-[80px]' src={logo} alt="" srcset="" />
                 </div>
@@ -25,8 +25,8 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     <div>
-                          <Link to='/login' className="btn btn-link no-underline text-yellow-500">Login</Link>
-                        <Link to='/register' className="btn btn-outline btn-warning">Register</Link>
+                          <Link to='/login' className="btn btn-link no-underline text-[#11224E]">Login</Link>
+                        <Link to='/register' className="btn btn-outline text-[#11224E] bg-[11224E]]">Register</Link>
                     </div>
 
                     {/* <div className="dropdown">

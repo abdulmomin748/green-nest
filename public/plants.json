@@ -1,0 +1,122 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://i.ibb.co.com/J4nhqMk/image.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 22,
+    "rating": 4.6,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "Beautiful white blooms that add elegance and clean the air naturally.",
+    "image": "https://i.ibb.co.com/xKLLBg4n/image.png",
+    "providerName": "Bloom Haven"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 15,
+    "rating": 4.7,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A soothing plant with medicinal properties and minimal care needs.",
+    "image": "https://i.ibb.co.com/pBBLV5V8/image.png",
+    "providerName": "EcoRoot Farms"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Monstera Deliciosa",
+    "category": "Tropical",
+    "price": 35,
+    "rating": 4.9,
+    "availableStock": 6,
+    "careLevel": "Medium",
+    "description": "Known for its large, fenestrated leaves that bring a tropical vibe.",
+    "image": "https://i.ibb.co.com/210dHLTb/image.png",
+    "providerName": "GreenSoul Nursery"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Indoor Tree",
+    "price": 45,
+    "rating": 4.5,
+    "availableStock": 5,
+    "careLevel": "Hard",
+    "description": "Tall, glossy leaves that create a bold statement indoors.",
+    "image": "https://i.ibb.co.com/sp1xB5ZV/image.png",
+    "providerName": "Nature's Nest"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Pothos",
+    "category": "Vine",
+    "price": 12,
+    "rating": 4.8,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "Fast-growing vine that tolerates neglect and brightens any space.",
+    "image": "https://i.ibb.co.com/2Y6j28Bd/image.png",
+    "providerName": "Leafy Vibe"
+  },
+  {
+    "plantId": 7,
+    "plantName": "Spider Plant",
+    "category": "Air Purifier",
+    "price": 14,
+    "rating": 4.7,
+    "availableStock": 18,
+    "careLevel": "Easy",
+    "description": "Low-maintenance plant that produces baby shoots and cleans the air.",
+    "image": "https://i.ibb.co.com/dJ06m033/image.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 8,
+    "plantName": "ZZ Plant",
+    "category": "Indoor",
+    "price": 28,
+    "rating": 4.9,
+    "availableStock": 7,
+    "careLevel": "Easy",
+    "description": "Glossy green leaves and drought tolerance make it perfect for offices.",
+    "image": "https://i.ibb.co.com/XrCx6kYw/image.png",
+    "providerName": "EcoRoot Farms"
+  },
+  {
+    "plantId": 9,
+    "plantName": "Boston Fern",
+    "category": "Hanging",
+    "price": 20,
+    "rating": 4.4,
+    "availableStock": 12,
+    "careLevel": "Medium",
+    "description": "Lush green fronds that thrive in humid environments.",
+    "image": "https://i.ibb.co.com/pr6g5tLG/image.png",
+    "providerName": "Bloom Haven"
+  },
+  {
+    "plantId": 10,
+    "plantName": "Rubber Plant",
+    "category": "Indoor Tree",
+    "price": 30,
+    "rating": 4.6,
+    "availableStock": 9,
+    "careLevel": "Medium",
+    "description": "Thick, shiny leaves that make a stylish addition to modern interiors.",
+    "image": "https://i.ibb.co.com/gM11rf4H/image.png",
+    "providerName": "Nature's Nest"
+  }
+]
