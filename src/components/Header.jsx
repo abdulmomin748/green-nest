@@ -13,8 +13,9 @@ const Header = () => {
         <div className='' style={{ boxShadow: '0 8px 10px -5px rgba(0, 0, 0, 0.4)' }}>
         <div className='c-container'>
             <div className="navbar">
+                
                 <div className="navbar-start">
-                    <img className='w-[80px]' src={logo} alt="" srcset="" />
+                    <img  className='w-[80px]' src={logo} alt="" srcset="" />
                 </div>
                 
                 <div className="navbar-center">

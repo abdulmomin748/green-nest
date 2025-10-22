@@ -6,6 +6,7 @@
 body{
   font-family: "Roboto", sans-serif;
   color: gray;
+  font-size: 18px;
 }
 .c-container {
   max-width: 1240px;     
