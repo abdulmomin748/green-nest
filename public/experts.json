@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Sophia Green",
+    "title": "Plant Specialist",
+    "description": "Expert in indoor plant care and soil nutrition with 10+ years of experience helping plants thrive.",
+    "image": "https://i.ibb.co.com/zVsG1bw1/image.png"
+  },
+  {
+    "id": 2,
+    "name": "Liam Woods",
+    "title": "Garden Designer",
+    "description": "Specializes in garden layouts and sustainable plant arrangements for modern homes.",
+    "image": "https://i.ibb.co.com/RTb236Kn/image.png"
+  },
+  {
+    "id": 3,
+    "name": "Ava Bloom",
+    "title": "Botany Educator",
+    "description": "Passionate about teaching plant care and eco-friendly gardening to beginners and nature lovers.",
+    "image": "https://i.ibb.co.com/p6XdYwqH/image.png"
+  }
+]

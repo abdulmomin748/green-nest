@@ -11,8 +11,8 @@ const PlantsCare = () => {
     },[])
     return (
         <div className='c-container'>
-            <h2 className='text-center text-5xl mb-8 pt-20'>Plant Care Tips</h2>
-            <p className='max-w-[700px] w-full m-auto text-center mb-5'>New to plant care? Don’t worry! Follow these simple tips to make sure your plants grow strong and stay green all year round.</p>
+            <h2 className='text-center text-5xl mb-6 pt-30'>Plant Care Tips</h2>
+            <p className='max-w-[700px] w-full m-auto text-center mb-10'>New to plant care? Don’t worry! Follow these simple tips to make sure your plants grow strong and stay green all year round.</p>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
                 {
