@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa';
 const PlantItemCard = ({plantItem}) => {
     const {image,plantName,price,rating,topRated} = plantItem;
     return (
-        <div className='pb-20'>
+        <div className=''>
             <div className="bg-white rounded-lg shadow-md">
                 <div className="relative h-48 rounded-t-lg sm:h-56 overflow-hidden">
                     <img 
