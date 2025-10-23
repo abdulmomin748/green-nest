@@ -6,6 +6,7 @@ import Plants from "../pages/Plants";
 import MyProfile from "../pages/MyProfile";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../pages/Home";
+import PlantDetails from "../pages/PlantDetails";
 
  const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ import Home from "../pages/Home";
             {
                 path: '/plants',
                 element: <Plants />
+            },
+            {
+                path: '/plantDetails/:id',
+                element: <PlantDetails />
             },
             {
                 path: '/myProfile',

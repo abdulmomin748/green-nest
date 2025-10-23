@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const PlantItemCard = ({plantItem}) => {
-    const {image,plantName,price,rating,topRated} = plantItem;
+    const {plantId,image,plantName,price,rating,category} = plantItem;
     return (
         <div className=''>
             <div className="bg-white rounded-lg shadow-md">
@@ -24,16 +25,16 @@ const PlantItemCard = ({plantItem}) => {
                     
                     <div className="flex items-center justify-between mb-4">
                         <span className="inline-block px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">
-                            Indor Tree
+                            {category}
                         </span>
                         <span className="text-xl sm:text-2xl font-bold text-green-700">
                             ৳{price}
                         </span>
                     </div>
                     
-                    <button className="w-full bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <Link to={`/plantDetails/${plantId}`} className="w-full cursor-pointer bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
                         <span>View Details</span>
-                    </button>
+                    </Link>
 
                 </div>
             </div>

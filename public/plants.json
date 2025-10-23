@@ -10,7 +10,29 @@
     "description": "A hardy plant that purifies indoor air and thrives in low light.",
     "image": "https://i.ibb.co.com/J4nhqMk/image.png",
     "providerName": "UrbanGreen Studio",
-    "topRated": true
+    "topRated": true,
+    "details": [
+      {
+        "title": "Watering Tips",
+        "info": "Water sparingly—only when the top inch of soil feels dry. Overwatering can cause root rot."
+      },
+      {
+        "title": "Light Requirements",
+        "info": "Prefers indirect sunlight but can tolerate low light conditions, making it ideal for offices or bedrooms."
+      },
+      {
+        "title": "Temperature & Humidity",
+        "info": "Grows well in average room temperatures between 18–27°C (65–80°F) and doesn’t require high humidity."
+      },
+      {
+        "title": "Benefits",
+        "info": "Known for removing toxins like formaldehyde and benzene from the air, improving overall indoor air quality."
+      },
+      {
+        "title": "Fertilizing",
+        "info": "Feed once every 2–3 months during the growing season (spring and summer) with a balanced houseplant fertilizer."
+      }
+    ]
   },
   {
     "plantId": 2,
@@ -22,7 +44,29 @@
     "careLevel": "Medium",
     "description": "Beautiful white blooms that add elegance and clean the air naturally.",
     "image": "https://i.ibb.co.com/xKLLBg4n/image.png",
-    "providerName": "Bloom Haven"
+    "providerName": "Bloom Haven",
+    "details": [
+      {
+        "title": "Watering Tips",
+        "info": "Keep the soil consistently moist but not soggy. Peace Lilies droop slightly when they need water—use that as a guide."
+      },
+      {
+        "title": "Light Requirements",
+        "info": "Prefers bright, indirect light. Can tolerate low light, but blooming may reduce."
+      },
+      {
+        "title": "Temperature & Humidity",
+        "info": "Thrives in temperatures between 18–26°C (65–79°F) with moderate to high humidity levels."
+      },
+      {
+        "title": "Benefits",
+        "info": "Excellent air purifier that removes toxins such as ammonia and formaldehyde, promoting a healthier indoor environment."
+      },
+      {
+        "title": "Fertilizing",
+        "info": "Feed every 6–8 weeks during spring and summer using a balanced liquid fertilizer diluted to half strength."
+      }
+  ]
   },
   {
     "plantId": 3,
@@ -35,7 +79,30 @@
     "description": "A soothing plant with medicinal properties and minimal care needs.",
     "image": "https://i.ibb.co.com/pBBLV5V8/image.png",
     "providerName": "EcoRoot Farms",
-    "topRated": true
+    "topRated": true,
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Allow the soil to dry out completely between waterings. Aloe Vera stores water in its leaves, so overwatering can easily cause root rot."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Prefers bright, indirect sunlight or partial sun. Too much direct sunlight can cause the leaves to brown or dry out."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Grows best in warm temperatures between 20–30°C (68–86°F) and low to moderate humidity. Keep away from cold drafts or frost."
+  },
+  {
+    "title": "Benefits",
+    "info": "Known for its healing gel, which soothes burns, cuts, and skin irritations. Also helps purify indoor air."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed sparingly—only once or twice during the growing season (spring and summer) using a diluted succulent fertilizer."
+  }
+]
+    
 
   },
   {
@@ -48,7 +115,29 @@
     "careLevel": "Medium",
     "description": "Known for its large, fenestrated leaves that bring a tropical vibe.",
     "image": "https://i.ibb.co.com/210dHLTb/image.png",
-    "providerName": "GreenSoul Nursery"
+    "providerName": "GreenSoul Nursery",
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Water when the top 2–3 inches of soil feel dry. Ensure the pot has good drainage to prevent root rot, and reduce watering in winter."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Prefers bright, indirect sunlight. Too little light can slow growth, while direct sunlight may scorch the leaves."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Thrives in warm, humid environments with temperatures between 20–30°C (68–86°F). Mist leaves regularly if indoor air is dry."
+  },
+  {
+    "title": "Benefits",
+    "info": "Improves indoor air quality and adds a tropical, decorative touch with its iconic split leaves."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed once a month during the growing season (spring and summer) with a balanced, water-soluble fertilizer."
+  }
+]
   },
   {
     "plantId": 5,
@@ -61,7 +150,29 @@
     "description": "Tall, glossy leaves that create a bold statement indoors.",
     "image": "https://i.ibb.co.com/sp1xB5ZV/image.png",
     "providerName": "Nature's Nest",
-    "topRated": true
+    "topRated": true,
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Water when the top inch of soil feels dry. Avoid overwatering, as Fiddle Leaf Figs are sensitive to soggy soil and poor drainage."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Needs bright, filtered sunlight to thrive. Too little light causes slow growth, while direct harsh sunlight can scorch the leaves."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Prefers warm temperatures between 21–29°C (70–85°F) and moderate to high humidity. Keep away from cold drafts and sudden temperature changes."
+  },
+  {
+    "title": "Benefits",
+    "info": "A stunning decorative plant that enhances indoor air quality and adds a bold, tropical feel to any space."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed every 4–6 weeks during spring and summer with a balanced liquid fertilizer to encourage healthy growth and glossy leaves."
+  }
+]
 
   },
   {
@@ -74,7 +185,29 @@
     "careLevel": "Easy",
     "description": "Fast-growing vine that tolerates neglect and brightens any space.",
     "image": "https://i.ibb.co.com/2Y6j28Bd/image.png",
-    "providerName": "Leafy Vibe"
+    "providerName": "Leafy Vibe",
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Water every 1–2 weeks, allowing the soil to dry out between waterings. Pothos is forgiving if you forget occasionally, but avoid letting it sit in water."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Thrives in bright, indirect light but can also tolerate low-light areas. Direct sunlight may scorch the leaves."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Prefers average room temperatures between 18–30°C (65–85°F) and moderate humidity. It adapts well to most indoor conditions."
+  },
+  {
+    "title": "Benefits",
+    "info": "A great air purifier that removes common indoor toxins and adds lush greenery to any room. Also easy to propagate from cuttings."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed once a month during the growing season (spring and summer) with a balanced liquid fertilizer diluted to half strength."
+  }
+]
   },
   {
     "plantId": 7,
@@ -86,7 +219,30 @@
     "careLevel": "Easy",
     "description": "Low-maintenance plant that produces baby shoots and cleans the air.",
     "image": "https://i.ibb.co.com/dJ06m033/image.png",
-    "providerName": "UrbanGreen Studio"
+    "providerName": "UrbanGreen Studio",
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Keep the soil lightly moist, but not soggy. Water once the top inch of soil feels dry, and reduce watering in winter."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Prefers bright, indirect sunlight. Can adapt to low light, but too much direct sun may cause leaf tips to brown."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Grows well in average indoor temperatures between 18–27°C (65–80°F) with moderate humidity. Avoid cold drafts."
+  },
+  {
+    "title": "Benefits",
+    "info": "Excellent air-purifying plant that removes formaldehyde and carbon monoxide. Also safe for pets and easy to propagate."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed every 2–3 weeks during spring and summer with a balanced, water-soluble fertilizer for healthy growth."
+  }
+]
+
   },
   {
     "plantId": 8,
@@ -98,7 +254,30 @@
     "careLevel": "Easy",
     "description": "Glossy green leaves and drought tolerance make it perfect for offices.",
     "image": "https://i.ibb.co.com/XrCx6kYw/image.png",
-    "providerName": "EcoRoot Farms"
+    "providerName": "EcoRoot Farms",
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Water only when the soil is completely dry. The ZZ Plant stores water in its thick rhizomes, so it tolerates infrequent watering very well."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Thrives in low to bright, indirect light. Avoid direct sunlight, which can scorch the leaves."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Prefers warm temperatures between 18–26°C (65–80°F) and average indoor humidity. Keep away from cold drafts."
+  },
+  {
+    "title": "Benefits",
+    "info": "One of the easiest houseplants to care for — it purifies indoor air and adds a glossy, modern look to any room."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed lightly once every 2–3 months during the growing season with a balanced, diluted fertilizer."
+  }
+]
+
   },
   {
     "plantId": 9,
@@ -110,7 +289,30 @@
     "careLevel": "Medium",
     "description": "Lush green fronds that thrive in humid environments.",
     "image": "https://i.ibb.co.com/pr6g5tLG/image.png",
-    "providerName": "Bloom Haven"
+    "providerName": "Bloom Haven",
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Keep the soil consistently moist but not soggy. Water when the top layer of soil begins to dry, and mist regularly to maintain humidity."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Prefers bright, indirect light. Avoid direct sunlight, which can scorch its delicate fronds."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Thrives in temperatures between 18–24°C (65–75°F) and high humidity. Ideal for bathrooms or kitchens where humidity is naturally higher."
+  },
+  {
+    "title": "Benefits",
+    "info": "Known for purifying indoor air by removing toxins like formaldehyde and xylene, and adds a lush, green aesthetic to your home."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed every 4–6 weeks during the growing season with a balanced, water-soluble fertilizer to encourage full, healthy fronds."
+  }
+]
+
   },
   {
     "plantId": 10,
@@ -123,7 +325,30 @@
     "description": "Thick, shiny leaves that make a stylish addition to modern interiors.",
     "image": "https://i.ibb.co.com/gM11rf4H/image.png",
     "providerName": "Nature's Nest",
-    "topRated": true
+    "topRated": true,
+    "details": [
+  {
+    "title": "Watering Tips",
+    "info": "Water moderately, allowing the top inch of soil to dry out between waterings. Reduce watering in winter to prevent root rot."
+  },
+  {
+    "title": "Light Requirements",
+    "info": "Thrives in bright, indirect light but can tolerate lower light conditions. Avoid direct sunlight, which can burn the leaves."
+  },
+  {
+    "title": "Temperature & Humidity",
+    "info": "Prefers temperatures between 18–27°C (65–80°F) and moderate humidity. Keep away from drafts and sudden temperature changes."
+  },
+  {
+    "title": "Benefits",
+    "info": "An attractive indoor plant that purifies the air and adds a bold, glossy look to interiors."
+  },
+  {
+    "title": "Fertilizing",
+    "info": "Feed every 4–6 weeks during the growing season with a balanced liquid fertilizer to promote healthy, shiny leaves."
+  }
+]
+
 
   }
 ]

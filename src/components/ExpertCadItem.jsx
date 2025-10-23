@@ -6,7 +6,7 @@ const ExpertCadItem = ({expertItem}) => {
     
     
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+        <div className=" bg-gray-100 flex items-center justify-center p-4">
             <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full">
                 <img
                 src={image}
@@ -23,7 +23,7 @@ const ExpertCadItem = ({expertItem}) => {
                 </p>
                 
                 {/* Button */}
-                <button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
+                <button className="w-full cursor-pointer bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
                 Contact Expert
                 </button>
             </div>
