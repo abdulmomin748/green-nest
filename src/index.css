@@ -44,3 +44,6 @@ h1,h2,h3,h4,h5,h6{
       width: 600px!important;
       height: 90vh!important;
   }
+.swiper-button-prev, .swiper-button-next{
+  color: rgb(255, 208, 0)!important;
+}

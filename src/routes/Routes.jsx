@@ -11,6 +11,7 @@ import Home from "../pages/Home";
     {
         path: '/',
         element: <MainLayout />,
+        loader: () => fetch('/plants.json'),
         children: [
             {
                 index: true,

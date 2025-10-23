@@ -9,7 +9,8 @@
     "careLevel": "Easy",
     "description": "A hardy plant that purifies indoor air and thrives in low light.",
     "image": "https://i.ibb.co.com/J4nhqMk/image.png",
-    "providerName": "UrbanGreen Studio"
+    "providerName": "UrbanGreen Studio",
+    "topRated": true
   },
   {
     "plantId": 2,
@@ -33,7 +34,9 @@
     "careLevel": "Easy",
     "description": "A soothing plant with medicinal properties and minimal care needs.",
     "image": "https://i.ibb.co.com/pBBLV5V8/image.png",
-    "providerName": "EcoRoot Farms"
+    "providerName": "EcoRoot Farms",
+    "topRated": true
+
   },
   {
     "plantId": 4,
@@ -57,7 +60,9 @@
     "careLevel": "Hard",
     "description": "Tall, glossy leaves that create a bold statement indoors.",
     "image": "https://i.ibb.co.com/sp1xB5ZV/image.png",
-    "providerName": "Nature's Nest"
+    "providerName": "Nature's Nest",
+    "topRated": true
+
   },
   {
     "plantId": 6,
@@ -117,6 +122,8 @@
     "careLevel": "Medium",
     "description": "Thick, shiny leaves that make a stylish addition to modern interiors.",
     "image": "https://i.ibb.co.com/gM11rf4H/image.png",
-    "providerName": "Nature's Nest"
+    "providerName": "Nature's Nest",
+    "topRated": true
+
   }
 ]

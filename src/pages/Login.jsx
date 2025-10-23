@@ -1,10 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { use } from 'react';
+import { Link  } from 'react-router-dom';
+import { PlantsDataContext } from '../AppContext/AppContext';
 
 const Login = () => {
+    const plantsData = use(PlantsDataContext);
+    console.log(plantsData);
+    
     const handleSignIn = () => {
 
     }
+
     return (
         <div>
             <div className="shrink-0 shadow-2xl pb-10">

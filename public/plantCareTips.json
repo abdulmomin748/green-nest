@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "Watering Tips",
+    "icon": "💧",
+    "shortDescription": "Keep your plants hydrated without overwatering.",
+    "details": [
+      "Water most houseplants once a week, or when the top 1–2 inches of soil feels dry.",
+      "Always use pots with drainage holes to prevent root rot.",
+      "Reduce watering during winter when plant growth slows down.",
+      "Use room-temperature water for best results."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Sunlight Tips",
+    "icon": "☀️",
+    "shortDescription": "Find the right balance of light for healthy growth.",
+    "details": [
+      "Most indoor plants prefer bright, indirect sunlight.",
+      "Avoid placing plants directly under harsh midday sun—it can scorch the leaves.",
+      "Rotate your pots every few days for even growth on all sides.",
+      "Low-light plants like snake plants or pothos can survive in dim corners."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Fertilizing Tips",
+    "icon": "🌱",
+    "shortDescription": "Feed your plants the nutrients they need to thrive.",
+    "details": [
+      "Fertilize every 2–4 weeks during spring and summer, when plants are actively growing.",
+      "Use a balanced, water-soluble fertilizer (10-10-10 or 20-20-20).",
+      "Avoid fertilizing in winter months when growth is minimal.",
+      "Flush soil occasionally with clean water to remove excess salts."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Pruning & Cleaning",
+    "icon": "✂️",
+    "shortDescription": "Keep your plants looking neat and encourage new growth.",
+    "details": [
+      "Trim dead or yellowing leaves regularly to redirect energy to new growth.",
+      "Use clean, sharp scissors to prevent plant infections.",
+      "Wipe leaves gently with a damp cloth to remove dust and improve photosynthesis."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Potting & Soil Care",
+    "icon": "🪴",
+    "shortDescription": "Healthy roots start with healthy soil.",
+    "details": [
+      "Repot plants every 12–18 months to refresh soil and give roots more room.",
+      "Use well-draining potting mix suited to the plant type (succulent mix, orchid mix, etc.).",
+      "Add perlite or sand to improve soil aeration for plants that dislike wet roots."
+    ]
+  }
+]

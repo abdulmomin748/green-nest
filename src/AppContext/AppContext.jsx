@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
 const AuthContext = createContext(null);
-
-export { AuthContext };
+const PlantsDataContext = createContext(null);
+export { AuthContext, PlantsDataContext };

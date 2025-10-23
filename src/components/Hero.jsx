@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 
 
 // swiper functionalities
@@ -11,23 +11,25 @@ import 'swiper/css';
 
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import { PlantsDataContext } from '../AppContext/AppContext';
 
 
 
 
 const Hero = () => {
-    const [plants, setPlants] = useState([]);
-    useEffect(() => {
-        fetch('/plants.json')
-        .then(res => res.json())
-        .then(data => setPlants(data))
-    },[])
-    console.log(plants);
+    const plantsData = use(PlantsDataContext);
+    // const [plants, setPlants] = useState([]);
+    // useEffect(() => {
+    //     fetch('/plants.json')
+    //     .then(res => res.json())
+    //     .then(data => setPlants(data))
+    // },[])
+    // console.log(plants);
     
     return (
         <div>
             {
-                plants.length > 0 &&  <Swiper
+                plantsData.length > 0 &&  <Swiper
                 navigation
                 loop={true}
                 effect={'coverflow'}
@@ -43,13 +45,13 @@ const Hero = () => {
                 slideShadows: true,
                 }}
                 pagination={true}
-                modules={[EffectCoverflow, Pagination]}
+                modules={[EffectCoverflow, Pagination,Navigation]}
                 className="mySwiper"
             >
                 
 
                 {
-                    plants.map( pItem => < SwiperSlide>
+                    plantsData.map( pItem => < SwiperSlide>
 
                     <img src={pItem.image} />
 
