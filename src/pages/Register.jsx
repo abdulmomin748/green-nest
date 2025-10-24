@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { use, useState } from "react";
 import { AuthContext } from "../AppContext/AppContext";
+import { toast } from "react-toastify";
 const Register = () => {
 
     const { crateUserEP,signInGoogle,updateUserProfile } = use(AuthContext);
@@ -48,25 +49,25 @@ const Register = () => {
             setError('')
             setPError('')
             updateUserProfile(name,photo);
+            toast.success(`Registerd successfully!`)
             navigate(location.state || '/')
         })
         .catch((error) => {
             const errorMessage = error.message;
             setError(errorMessage)
-            
         });
-
-
      }  
      
      const handleSignInGoogle = () => {
         signInGoogle()
         .then(result => {
             console.log(result.user);
+            toast.success(`Login successfully!`)
             navigate(location.state || '/')
         })
         .catch(error => {
             console.log(error.message);
+            toast.error(`${error.message}`)
         })
      }
 
@@ -114,12 +115,13 @@ const Register = () => {
                                 }
                             </label>
                         </div>
-                            <input type='submit' className="btn btn-neutral mt-2" placeholder='red'
+                            <input type='submit' className="btn btn-neutral text-[15px] font-semibold mt-2" placeholder='red'
                             value='Register'
                             ></input>
                             
-                            <span className='bg-black p-3 flex justify-center mt-2'>
-                                <FcGoogle onClick={handleSignInGoogle} className='text-2xl mr-4 cursor-pointer' />
+                            <span onClick={handleSignInGoogle}  className='bg-black cursor-pointer p-3 flex items-center text-white justify-center text-[15px] font-semibold mt-2'>
+                                    <FcGoogle className=' mr-4 cursor-pointer text-2xl' />
+                                    Login with Google
                             </span>
                              <div className='z-100'>
                                 Already have an account? <Link to={'/login'} className='link link-hover underline'> Login </Link>

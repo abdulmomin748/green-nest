@@ -43,7 +43,7 @@ const FeaturedPlantItem = () => {
                         </p>
 
                         {/* Care Info */}
-                        <div className="grid grid-cols-3 gap-4 mb-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                         <div className="text-center p-4 bg-blue-50 rounded-lg">
                             <FaDroplet className="w-6 h-6 text-blue-500 mx-auto mb-2" />
                             <p className="text-xs text-slate-600 mb-1">Water</p>

@@ -45,14 +45,30 @@ const Header = () => {
     return (
         <div className='bg-[#EEEEEE] text-[#11224E]' style={{ boxShadow: '0 8px 10px -5px rgba(0, 0, 0, 0.4)' }}>
         <div className='c-container'>
-            <div className="navbar">
-
-                <div className="navbar-start">
-                    <Link to={'/'}><img  className='w-20' src={logo} alt="" srcset="" /></Link>
+            <div class="navbar">
+                <div class="navbar-start text-black ">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        </div>
+                        <ul
+                            tabindex="0"
+                            class="menu text-black menu-sm dropdown-content bg-base-100 rounded-box  mt-3 w-65 p-2 text-xl shadow pb-3 z-50">
+                            <div class=" items-center flex justify-center p-5 border-b-2 mb-7 border-amber-400 border-dotted ">
+                               <Link to={'/'}><img  className='w-25' src={logo} alt="" srcset="" /></Link>
+                            </div>
+                            {link}
+                        </ul>
+                    </div>
+                    <div class="flex items-center">
+                         <div class=" items-center lg:flex hidden">
+                            <Link to={'/'}><img  className='w-20' src={logo} alt="" srcset="" /></Link>
+                         </div>
+                    </div>
                 </div>
                 
-                <div className="navbar-center">
-                    <ul className="menu menu-vertical c-nav lg:menu-horizontal flex gap-5">
+                <div class="navbar-center menu-social c-nav  hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
                         {link}
                     </ul>
                 </div>
@@ -60,7 +76,7 @@ const Header = () => {
 
                     {
                         ! user ? (
-                            <div>
+                    <div className='flex'>
                           <Link to='/login' className="btn btn-link no-underline text-[#11224E]">Login</Link>
                         <Link to='/register' className="btn btn-outline text-[#11224E] bg-[11224E]]">Register</Link>
                     </div>
@@ -157,6 +173,9 @@ const Header = () => {
 
                 </div>
             </div>
+
+
+
         </div>
         </div>
     );

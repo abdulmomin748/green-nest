@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { useParams } from 'react-router-dom';
 import { PlantsDataContext } from '../AppContext/AppContext';
 import Swal from 'sweetalert2';
+import { FaStar } from 'react-icons/fa';
 
 const PlantDetails = () => {
     const {id} = useParams();
@@ -24,12 +25,12 @@ const PlantDetails = () => {
     return (
         <div className='c-container'>
             <div className=' pt-15'>
-                <div className='w-10/12 m-auto' >
+                <div className='w-full md:w-10/12 m-auto' >
                     <div className='relative'>
                         <h2 className='mb-5 text-5xl font-bold border-b-4 border-yellow-500 inline-block'>{plantName} <span className='text-2xl'>_{category}_</span></h2>
                     </div>
                     <p className='text-3xl font-semibold mb-2'><span className='underline'>Price:</span> <span className='bg-yellow-500 px-5'>{price}</span></p>
-                    <p className='text-3xl mb-1 font-semibold'><span className='underline'>Rating:</span> <span className='bg-yellow-500 px-5'>{rating}</span></p>
+                    <p className='text-3xl mb-1 font-semibold flex'><span className='underline'>Rating:</span> <span className=' px-5 flex '><FaStar className='mr-1'/>{rating}</span></p>
                     <p className='text-3xl mb-5 font-semibold'><span className='underline'>Available </span>Stock: <span className='bg-yellow-500 px-5'>{availableStock}</span></p>
                     
                     
@@ -46,8 +47,8 @@ const PlantDetails = () => {
                         </div>)
                     }
                     <div>
-                        <div className=" bg-gray-100 flex items-center mt-10 justify-center p-10">
-                            <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+                        <div className=" bg-gray-100 flex items-center mt-10 justify-center sm:p-10 py-5">
+                            <div className="bg-white rounded-lg shadow-lg sm:p-8 p-4 max-w-md w-full">
                                 <h2 className="text-2xl font-bold text-gray-800 mb-1">
                                 Book Consultation
                                 </h2>

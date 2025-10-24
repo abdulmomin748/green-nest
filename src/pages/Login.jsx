@@ -40,6 +40,7 @@ const Login = () => {
         })
         .catch(error => {
             console.log(error.message);
+            toast.error(`${error.message}`)
         })
      }
      const handlePasswordReset = () => {
@@ -91,11 +92,12 @@ const Login = () => {
                                 <p className="text-red-600 my-2">{error ? error : ''}</p>
                             }
                         </div>
-                            <input type='submit' className="btn btn-neutral" placeholder='red'
+                            <input type='submit' className="btn text-[15px] font-semibold btn-neutral" placeholder='red'
                             value='Login'
                             ></input>
-                            <span className='bg-black p-3 flex justify-center mt-2'>
-                                <FcGoogle onClick={handleSignInGoogle} className='text-2xl mr-4 cursor-pointer' />
+                            <span onClick={handleSignInGoogle}  className='bg-black cursor-pointer p-3 flex items-center text-white justify-center text-[15px] font-semibold mt-2'>
+                                <FcGoogle className=' mr-4 cursor-pointer text-2xl' />
+                                Login with Google
                             </span>
                             {/* <span className='bg-black p-3 flex justify-center mt-2'>
                                 <FcGoogle onClick={handleSignGoogle} className='text-2xl mr-4 cursor-pointer' />

@@ -14,7 +14,7 @@ const PlantItemCard = ({plantItem}) => {
                     className="w-full h-full object-cover"
                     />
                 </div>
-                <div className="p-4 sm:p-6 ">
+                <div className="p-4 p-6 ">
                     <h3 className="text-lg  flex justify-between sm:text-xl font-bold text-gray-800 mb-2">
                         {plantName}
                         <span className='flex text-yellow-500 justify-center items-center li'>

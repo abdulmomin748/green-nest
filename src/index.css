@@ -49,6 +49,9 @@ h1,h2,h3,h4,h5,h6{
 .dropdown{
   /* position: absolute!important; */
 }
-.menu {
+.menu-social {
   left: -100px!important;
+}
+.menu a{
+  padding: 7px 15px;
 }
