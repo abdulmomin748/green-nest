@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { PlantsDataContext } from '../AppContext/AppContext';
 import PlantItemCard from './PlantItemCard';
+import { Link } from 'react-router-dom';
 
 const TopRatedIndPlants = () => {
     const plantsData = use(PlantsDataContext);
@@ -14,6 +15,11 @@ const TopRatedIndPlants = () => {
                 {
                     plantsData.slice(0,3).map(plantItem => < PlantItemCard plantItem ={plantItem} />)
                 }
+            </div>
+            <div className='flex justify-center pt-15'>
+                    <Link to={`/plants`} className="cursor-pointer bg-green-900 hover:bg-green-600 text-white font-semibold py-3 px-14 rounded-sm transition duration-300 ease-in-out  ">
+                        <span>View All plants</span>
+                    </Link>
             </div>
         </div>
     );

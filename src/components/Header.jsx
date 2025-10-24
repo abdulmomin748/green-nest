@@ -5,6 +5,7 @@ import { AuthContext } from '../AppContext/AppContext';
 import { IoIosArrowDown } from 'react-icons/io';
 import { FaRoute, FaUser } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 const Header = () => {
     const [isOpen,setIsOpen] = useState(false);
     const { user, logOutUser } = use(AuthContext);
@@ -34,7 +35,7 @@ const Header = () => {
     const handleLogout = () => {
         logOutUser()
         .then(() => {
-            
+            toast.success('Logout Successfully!')
         })
         .catch(error => {
             console.log(error.message);
@@ -47,7 +48,7 @@ const Header = () => {
             <div className="navbar">
 
                 <div className="navbar-start">
-                    <img  className='w-20' src={logo} alt="" srcset="" />
+                    <Link to={'/'}><img  className='w-20' src={logo} alt="" srcset="" /></Link>
                 </div>
                 
                 <div className="navbar-center">

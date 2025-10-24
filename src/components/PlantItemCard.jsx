@@ -24,7 +24,7 @@ const PlantItemCard = ({plantItem}) => {
                     </h3>
                     
                     <div className="flex items-center justify-between mb-4">
-                        <span className="inline-block px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">
+                        <span className="inline-block px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium mb-3">
                             {category}
                         </span>
                         <span className="text-xl sm:text-2xl font-bold text-green-700">
@@ -32,7 +32,7 @@ const PlantItemCard = ({plantItem}) => {
                         </span>
                     </div>
                     
-                    <Link to={`/plantDetails/${plantId}`} className="w-full cursor-pointer bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <Link to={`/plantDetails/${plantId}`} className="w-full cursor-pointer bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105">
                         <span>View Details</span>
                     </Link>
 

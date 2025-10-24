@@ -2,10 +2,11 @@ import React, { use } from 'react';
 import { AuthContext } from '../AppContext/AppContext';
 import { FaMailBulk, FaSave, FaUser } from 'react-icons/fa';
 import { FaPhotoFilm } from 'react-icons/fa6';
+import Swal from 'sweetalert2';
 
 const MyProfile = () => {
     const {user,updateUserProfile} = use(AuthContext);
-
+    
     const handleUpdateProfile = e => {
 
         e.preventDefault();
@@ -14,6 +15,24 @@ const MyProfile = () => {
         console.log(name,photo);
         updateUserProfile(name,photo)
         .then(() => {
+            const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+             color: "#0f172b",
+             iconColor: 'white',
+            background: "#FFD000",
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "success",
+            title: "Profile Udpate successfully"
+            });
         }).catch((error) => {
             console.log(error.message);
         });

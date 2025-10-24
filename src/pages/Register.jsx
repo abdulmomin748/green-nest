@@ -8,7 +8,7 @@ import { use, useState } from "react";
 import { AuthContext } from "../AppContext/AppContext";
 const Register = () => {
 
-    const { crateUserEP,signInGoogle } = use(AuthContext);
+    const { crateUserEP,signInGoogle,updateUserProfile } = use(AuthContext);
     const [error,setError] = useState('');
     const [pError,setPError] = useState('');
     const location  = useLocation();
@@ -47,7 +47,7 @@ const Register = () => {
             const user = result.user;
             setError('')
             setPError('')
-            console.log(user);
+            updateUserProfile(name,photo);
             navigate(location.state || '/')
         })
         .catch((error) => {

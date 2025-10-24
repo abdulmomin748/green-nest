@@ -11,6 +11,9 @@
     "image": "https://i.ibb.co.com/J4nhqMk/image.png",
     "providerName": "UrbanGreen Studio",
     "topRated": true,
+    "isFeatured": true,
+    "water": "Daily Once a time",
+    "bright": "Bright Indirect",
     "details": [
       {
         "title": "Watering Tips",

@@ -4,7 +4,7 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Home from '../pages/Home';
 import RootProvider from '../provider/RootProvider';
-
+import { ToastContainer } from 'react-toastify'
 const MainLayout = () => {
     const plantsData = useLoaderData();
     
@@ -16,6 +16,7 @@ const MainLayout = () => {
                 <Header />
                     <Outlet />
                 <Footer />
+                <ToastContainer autoClose={3000}/>
             </RootProvider>
         </div>
     );

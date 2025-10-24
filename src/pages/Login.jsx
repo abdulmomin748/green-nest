@@ -2,6 +2,7 @@ import React, { use, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate  } from 'react-router-dom';
 import { AuthContext, PlantsDataContext } from '../AppContext/AppContext';
 import { FcGoogle } from 'react-icons/fc';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -20,13 +21,14 @@ const Login = () => {
         signInEmailPassword( email,password )
         .then(result => {
             console.log(result.user);
-            alert('successfully login')
             setError('')
             navigate(location.state || '/');
+            toast.success('Login successfully!')
         })
         .catch(error => {
             console.log(error.message);
             setError(error.message)
+            
         })
     }
     const handleSignInGoogle = () => {
@@ -34,6 +36,7 @@ const Login = () => {
         .then(result => {
             console.log(result.user);
             navigate(location.state || '/');
+            toast.success('Login successfully!')
         })
         .catch(error => {
             console.log(error.message);
@@ -45,10 +48,12 @@ const Login = () => {
         passwordReset(email)
         .then( ()=> {
             console.log('password reset');
-            
+            toast.success(`Password reset email sent-${email}`)
         })
         .catch( error => {
             console.log(error.message);
+            toast.error(`${error.message}`)
+
         })
 
      }
