@@ -1,7 +1,7 @@
 
 import { FaRegEye  } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { use, useState } from "react";
@@ -11,8 +11,8 @@ const Register = () => {
     const { crateUserEP,signInGoogle } = use(AuthContext);
     const [error,setError] = useState('');
     const [pError,setPError] = useState('');
-
-    console.log(crateUserEP);
+    const location  = useLocation();
+    const navigate = useNavigate();
     
      const handleRegister = e => {
         e.preventDefault();
@@ -36,7 +36,7 @@ const Register = () => {
             return setPError('Password should be contain at least 1 uppercase alphabetical character');
         }else{
             setPError('');
-        }if(!(/([?=.*[0-9]])/.test(password))){
+        }if(!(/(?=.*[0-9])/.test(password))){
             return setPError('Password should be contain at least 1 numeric character');
         }else{
             setPError('');
@@ -48,7 +48,7 @@ const Register = () => {
             setError('')
             setPError('')
             console.log(user);
-            
+            navigate(location.state || '/')
         })
         .catch((error) => {
             const errorMessage = error.message;
@@ -63,6 +63,7 @@ const Register = () => {
         signInGoogle()
         .then(result => {
             console.log(result.user);
+            navigate(location.state || '/')
         })
         .catch(error => {
             console.log(error.message);

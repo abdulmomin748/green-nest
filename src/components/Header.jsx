@@ -34,7 +34,7 @@ const Header = () => {
     const handleLogout = () => {
         logOutUser()
         .then(() => {
-            alert('successfully login')
+            
         })
         .catch(error => {
             console.log(error.message);
@@ -47,7 +47,7 @@ const Header = () => {
             <div className="navbar">
 
                 <div className="navbar-start">
-                    <img  className='w-[80px]' src={logo} alt="" srcset="" />
+                    <img  className='w-20' src={logo} alt="" srcset="" />
                 </div>
                 
                 <div className="navbar-center">
@@ -57,12 +57,15 @@ const Header = () => {
                 </div>
                 <div className="navbar-end relative">
 
-                    <div>
+                    {
+                        ! user ? (
+                            <div>
                           <Link to='/login' className="btn btn-link no-underline text-[#11224E]">Login</Link>
                         <Link to='/register' className="btn btn-outline text-[#11224E] bg-[11224E]]">Register</Link>
                     </div>
-
-
+                    )
+                    :        
+                    (
                     <div className="relative" ref={dropdownRef}>
 
                     {/* User button dropdown */}
@@ -148,7 +151,8 @@ const Header = () => {
                             </div>
                             </div>
                         )}
-                    </div>
+                    </div>)
+                    }
 
                 </div>
             </div>

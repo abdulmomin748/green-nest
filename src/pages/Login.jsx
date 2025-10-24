@@ -1,13 +1,16 @@
-import React, { use, useState } from 'react';
-import { Link  } from 'react-router-dom';
+import React, { use, useRef, useState } from 'react';
+import { Link, Navigate, useLocation, useNavigate  } from 'react-router-dom';
 import { AuthContext, PlantsDataContext } from '../AppContext/AppContext';
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
     const [error, setError] = useState('');
     const plantsData = use(PlantsDataContext);
-    const { signInEmailPassword,signInGoogle } = use(AuthContext);
-    console.log(plantsData);
+    const { signInEmailPassword,signInGoogle,passwordReset } = use(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const emailRef = useRef();
+    console.log(location);
     
     const handleSignIn = e => {
         e.preventDefault();
@@ -19,6 +22,7 @@ const Login = () => {
             console.log(result.user);
             alert('successfully login')
             setError('')
+            navigate(location.state || '/');
         })
         .catch(error => {
             console.log(error.message);
@@ -29,10 +33,24 @@ const Login = () => {
         signInGoogle()
         .then(result => {
             console.log(result.user);
+            navigate(location.state || '/');
         })
         .catch(error => {
             console.log(error.message);
         })
+     }
+     const handlePasswordReset = () => {
+        const email = emailRef.current.value
+        
+        passwordReset(email)
+        .then( ()=> {
+            console.log('password reset');
+            
+        })
+        .catch( error => {
+            console.log(error.message);
+        })
+
      }
     return (
         <div>
@@ -47,7 +65,7 @@ const Login = () => {
                         <fieldset className="fieldset">
                         <label className="label">Email</label>
 
-                        <input type="email" name='email' className="input" placeholder="Email" required/>
+                        <input ref={emailRef} type="email" name='email' className="input" placeholder="Email" required/>
                         
                         <label className="label">Password</label>
                         <div className='relative'>
@@ -63,7 +81,7 @@ const Login = () => {
                             </span>
                         </div>
                         <div>
-                            <span  className="link link-hover mt-2 inline-block">Forgot password?</span>
+                            <span onClick={handlePasswordReset} className="link link-hover mt-2 inline-block">Forgot password?</span>
                             {
                                 <p className="text-red-600 my-2">{error ? error : ''}</p>
                             }

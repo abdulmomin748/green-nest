@@ -7,6 +7,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../pages/Home";
 import PlantDetails from "../pages/PlantDetails";
 import Register from "../pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
  const router = createBrowserRouter([
     {
@@ -24,11 +25,15 @@ import Register from "../pages/Register";
             },
             {
                 path: '/plantDetails/:id',
-                element: <PlantDetails />
+                element: <PrivateRoute >
+                    <PlantDetails />
+                </PrivateRoute>
             },
             {
                 path: '/myProfile',
-                element: <MyProfile />
+                element: <PrivateRoute >
+                    <MyProfile />
+                </PrivateRoute>
             },
             {
                 path: '/login',
