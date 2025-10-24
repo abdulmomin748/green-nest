@@ -1,18 +1,42 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link  } from 'react-router-dom';
-import { PlantsDataContext } from '../AppContext/AppContext';
+import { AuthContext, PlantsDataContext } from '../AppContext/AppContext';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
+    const [error, setError] = useState('');
     const plantsData = use(PlantsDataContext);
+    const { signInEmailPassword,signInGoogle } = use(AuthContext);
     console.log(plantsData);
     
-    const handleSignIn = () => {
+    const handleSignIn = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
+        signInEmailPassword( email,password )
+        .then(result => {
+            console.log(result.user);
+            alert('successfully login')
+            setError('')
+        })
+        .catch(error => {
+            console.log(error.message);
+            setError(error.message)
+        })
     }
-
+    const handleSignInGoogle = () => {
+        signInGoogle()
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.log(error.message);
+        })
+     }
     return (
         <div>
-            <div className="shrink-0 shadow-2xl pb-10">
+            <div className=" pb-10">
                 <h1 className='text-4xl text-center text-black mt-10'>Login Now</h1>
 
 
@@ -23,7 +47,7 @@ const Login = () => {
                         <fieldset className="fieldset">
                         <label className="label">Email</label>
 
-                        <input type="email" name='email' className="input" placeholder="Email" />
+                        <input type="email" name='email' className="input" placeholder="Email" required/>
                         
                         <label className="label">Password</label>
                         <div className='relative'>
@@ -32,24 +56,24 @@ const Login = () => {
                             className="input" 
                             name='password' 
                             placeholder="Password" 
+                            required
                             />
                             <span className='absolute p-2 cursor-pointer right-5 z-50  text-xl top-1'>
                             
                             </span>
                         </div>
                         <div>
-                            <label className="label block my-2">
-                                <input type="checkbox" name='terms' defaultChecked 
-                                className="checkbox" />
-                                <span className='ml-2'>Accept Our Terms & condition</span>
-                            </label>
-
-                            <span  className="link link-hover">Forgot password?</span>
+                            <span  className="link link-hover mt-2 inline-block">Forgot password?</span>
+                            {
+                                <p className="text-red-600 my-2">{error ? error : ''}</p>
+                            }
                         </div>
-                            <input type='submit' className="btn btn-neutral mt-4" placeholder='red'
+                            <input type='submit' className="btn btn-neutral" placeholder='red'
                             value='Login'
                             ></input>
-                            
+                            <span className='bg-black p-3 flex justify-center mt-2'>
+                                <FcGoogle onClick={handleSignInGoogle} className='text-2xl mr-4 cursor-pointer' />
+                            </span>
                             {/* <span className='bg-black p-3 flex justify-center mt-2'>
                                 <FcGoogle onClick={handleSignGoogle} className='text-2xl mr-4 cursor-pointer' />
                                 <FaGithub  className='text-2xl cursor-pointer'  />
