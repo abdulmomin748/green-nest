@@ -25,7 +25,7 @@ const {loading,startLoading,stopLoading} = use(LoadingContext);
         }, 700);
     },[])
     if(loading){
-        return <div className='flex justify-center items-center h-[300px]'>
+        return <div className='flex justify-center items-center h-[500px]'>
                 <div class="loader"></div>
             </div>
     
@@ -94,8 +94,8 @@ const {loading,startLoading,stopLoading} = use(LoadingContext);
             // console.log(error.message);
             toast.error(`${error.message}`)
         })
-     }
-
+     } 
+    document.title = "Register Page";
     return (
         <div>
             <div className="pb-10">

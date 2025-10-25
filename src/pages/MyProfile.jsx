@@ -56,6 +56,8 @@ const MyProfile = () => {
         });
 
     }
+     document.title = "Profile Page";
+
     return (
         <div >
             <div className=" c-container">

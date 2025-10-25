@@ -1,17 +1,49 @@
-# React + Vite
+# GreenNest 🌿
+A responsive plant care & store platform built with React and Firebase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Live Demo
+[🌐 View Live Site](https://green-nest-9.firebaseapp.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Repository
+[📂 GitHub Repo](https://github.com/programming-hero-web-course2/b12-a9-firesheild-abdulmomin748)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
+- 🔐 Firebase Authentication: Signup, Login, Google Sign-In, Forgot Password  
+- 🌱 Plant Listings: Fetch data from JSON  
+- 🛡 Protected Routes: Service details & profile management  
+- 🎨 SPA with minimalist, calming design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# b12-a9-firesheild-abdulmomin748" 
+---
+
+## Tech
+React | Firebase | Tailwind CSS
+
+---
+
+## Setup
+1. Clone & install:
+```bash
+git clone <repo-url>
+cd <project-folder>
+npm install
+
+## Add Firebase config in .env.local:
+REACT_APP_FIREBASE_API_KEY=your_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_project
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+REACT_APP_FIREBASE_APP_ID=your_app_id
+
+## Start the app:
+npm start
+
+## Usage
+Browse plants & services
+Signup/Login to access protected routes
+Manage profile & view details

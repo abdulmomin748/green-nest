@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage.jsx";
 import PlantDetails from "../pages/PlantDetails";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import ResetPasswordPage from "../components/ResetPasswordPage.jsx";
 
  const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ import PrivateRoute from "./PrivateRoute";
                 element: 
                     <Register/>
                 
+            },
+            {
+                path: '/resetPassword',
+                element: <ResetPasswordPage />
             }
         ]
     },

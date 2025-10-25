@@ -21,7 +21,7 @@ const Login = () => {
         }, 700);
     },[])
     if(loading){
-        return <div className='flex justify-center items-center h-[300px]'>
+        return <div className='flex justify-center items-center h-[500px]'>
                 <div class="loader"></div>
             </div>
     }
@@ -61,23 +61,8 @@ const Login = () => {
             toast.error(`${error.message}`)
         })
      }
-     const handlePasswordReset = () => {
-        const email = emailRef.current.value
-        
-        passwordReset(email)
-        .then( ()=> {
-            // console.log('password reset');
-            toast.success(`Password reset email sent-${email}`)
-            setLoading(false)
-
-        })
-        .catch( error => {
-            // console.log(error.message);
-            toast.error(`${error.message}`)
-
-        })
-
-     }
+     
+     document.title = "Login Page";
     return (
         <div>
             <div className=" pb-10">
@@ -107,7 +92,7 @@ const Login = () => {
                             </span>
                         </div>
                         <div>
-                            <span onClick={handlePasswordReset} className="link link-hover mt-2 inline-block">Forgot password?</span>
+                            <Link to={'/resetPassword'} className="link link-hover mt-2 inline-block">Forgot password?</Link>
                             {
                                 <p className="text-red-600 my-2">{error ? error : ''}</p>
                             }

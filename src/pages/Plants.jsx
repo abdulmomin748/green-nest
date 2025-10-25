@@ -13,11 +13,12 @@ const Plants = () => {
         }, 700);
     },[])
     if(loading){
-        return <div className='flex justify-center items-center h-[300px]'>
+        return <div className='flex justify-center items-center h-[500px]'>
                 <div class="loader"></div>
             </div>
     
     }
+     document.title = "Plants page";
     
     return (
         <div className='pb-20'>

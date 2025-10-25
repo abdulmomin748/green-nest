@@ -16,7 +16,7 @@ const PlantDetails = () => {
         }, 700);
     },[])
     if(loading){
-        return <div className='flex justify-center items-center h-[300px]'>
+        return <div className='flex justify-center items-center h-[500px]'>
                 <div class="loader"></div>
             </div>
     
@@ -34,6 +34,7 @@ const PlantDetails = () => {
         e.target.name.value =''
         e.target.email.value=''
     }
+     document.title = "Plant details page";
     
     return (
         <div className='c-container'>
