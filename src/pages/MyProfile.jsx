@@ -7,20 +7,19 @@ import { toast } from 'react-toastify';
 
 const MyProfile = () => {
     const {user,updateUserProfile, setUser,setLoading} = use(AuthContext);
-    //  const {loading,startLoading,stopLoading} = use(LoadingContext);
+     const {loading,startLoading,stopLoading} = use(LoadingContext);
 
-    // useEffect(() =>{
-    //     startLoading();
-    //     setTimeout(() => {
-    //         stopLoading();
-    //     }, 700);
-    // },[])
-    // if(loading){
-    //     return <div className='flex justify-center items-center h-[300px]'>
-    //             <div class="loader"></div>
-    //         </div>
-    
-    // }
+    useEffect(() =>{
+        startLoading();
+        setTimeout(() => {
+            stopLoading();
+        }, 700);
+    },[])
+    if(loading){
+        return <div className='flex justify-center items-center h-[500px]'>
+                <div class="loader"></div>
+            </div>
+    }
     const handleUpdateProfile = e => {
 
         e.preventDefault();
@@ -32,23 +31,10 @@ const MyProfile = () => {
             setLoading(false)
             setUser({...user,displayName: name, photoURL: photo});
             console.log(user);
-            const Toast = Swal.mixin({
-            toast: true,
-            position: "bottom-start",
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-             color: "#0f172b",
-             iconColor: 'white',
-            background: "#FFD000",
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-            });
-            Toast.fire({
-            icon: "success",
-            title: "Profile Udpate successfully"
+            Swal.fire({
+                title: "Information Updated!",
+                text: "You account information updated successfully!!",
+                icon: "success"
             });
         }).catch((error) => {
             // console.log(error.message);

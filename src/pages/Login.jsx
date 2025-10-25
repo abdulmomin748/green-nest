@@ -9,12 +9,14 @@ const Login = () => {
     const {loading,startLoading,stopLoading} = use(LoadingContext);
     const [isOpen,setIsOpen] = useState(false);
     const [error, setError] = useState('');
-    const { signInEmailPassword,signInGoogle,setLoading } = use(AuthContext);
+    const { signInEmailPassword,signInGoogle,setLoading,user } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef();
     const [email,setEmail] = useState('');
     // console.log(location);
+
+    const currentUserObserver = user?.email;
 
     useEffect(() =>{
         startLoading();
@@ -35,7 +37,7 @@ const Login = () => {
         const password = e.target.password.value;
 
         signInEmailPassword( email,password )
-        .then(result => {
+        .then(() => {
             // console.log(result.user);
             setError('')
             navigate(location.state || '/');
@@ -51,7 +53,7 @@ const Login = () => {
     }
     const handleSignInGoogle = () => {
         signInGoogle()
-        .then(result => {
+        .then(() => {
             // console.log(result.user);
             navigate(location.state || '/');
             toast.success('Login successfully!')
@@ -63,7 +65,7 @@ const Login = () => {
             toast.error(`${error.message}`)
         })
      }
-     console.log(email);
+     console.log(currentUserObserver);
      
      document.title = "Login Page";
     return (
@@ -79,7 +81,7 @@ const Login = () => {
                         <fieldset className="fieldset">
                         <label className="label">Email</label>
 
-                        <input ref={emailRef} type="email"  onChange={(e) => setEmail(e.target.value)}  value={email} name='email' className="input w-full" placeholder="Email" required/>
+                        <input ref={emailRef} type="email"  onChange={(e) => setEmail(e.target.value)}  value={currentUserObserver || email} name='email' className="input w-full" placeholder="Email" required/>
                         
                         <label className="label">Password</label>
                         <div className='relative'>

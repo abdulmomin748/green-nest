@@ -4,10 +4,10 @@ import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
 
 const ResetPasswordPage = () => {
-    const { passwordReset,setLoading } = use(AuthContext);
+    const { passwordReset,setLoading,user } = use(AuthContext);
     const location = useLocation();
-    console.log(location);
-    
+    const currentUser = user?.email;
+
     const handleResetPasword = e => {
         e.preventDefault();
         const email = e.target.email.value
@@ -25,6 +25,7 @@ const ResetPasswordPage = () => {
     })
 
      }
+     
     return (
         <div className='max-w-100 m-auto py-50'>
             <h2 className='text-3xl mb-6'>Reset your password</h2>
@@ -32,8 +33,8 @@ const ResetPasswordPage = () => {
                 <fieldset className="fieldset">
                     <label className="label text-xl">Email</label>
 
-                    <input type="email" value={location.state} name='email' className="input text-xl py-7 w-full" placeholder="Write Your email here........" required/>
-                    
+                    <input type="email" value={location?.state || currentUser} name='email' className="input text-xl py-7 w-full" placeholder="Write Your email here........" required/>
+
                 </fieldset>
                 <input type='submit' className="btn text-[15px] mt-3 w-full font-semibold btn-neutral" placeholder='red'
                 value='Reset your email password'

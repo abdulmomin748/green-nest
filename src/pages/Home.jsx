@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect } from 'react';
+import React, {  useContext, useEffect } from 'react';
 import Hero from '../components/Hero';
 import TopRatedIndPlants from '../components/TopRatedIndPlants';
 import PlantsCare from '../components/PlantsCare';

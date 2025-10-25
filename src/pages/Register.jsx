@@ -63,13 +63,10 @@ const {loading,startLoading,stopLoading} = use(LoadingContext);
             const user = result.user;
             setError('')
             setPError('')
-            console.log('1',user);
             setLoading(false)
             
             updateUserProfile(name,photo).then(() => {
-                console.log('2',user);
                 setUser({...user, displayName: name, photoURL: photo});
-                console.log('3',user);
                 setLoading(false)
             })
             toast.success(`Registerd successfully!`)
@@ -78,14 +75,13 @@ const {loading,startLoading,stopLoading} = use(LoadingContext);
         .catch((error) => {
             const errorMessage = error.message;
             setError(errorMessage)
-            console.log(error);
             
         });
      }  
      
      const handleSignInGoogle = () => {
         signInGoogle()
-        .then(result => {
+        .then(() => {
             // console.log(result.user);
             toast.success(`Login successfully!`)
             navigate(location.state || '/')
@@ -127,13 +123,14 @@ const {loading,startLoading,stopLoading} = use(LoadingContext);
                             type={`${isOpen ? 'text' : 'password'}`}
                             placeholder="Password" 
                             required/>
-                            <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-3 bottom-2 z-40">
+                            <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-3 bottom-1 z-40">
                                 {isOpen ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
-                            {
+                            
+                        </div>
+                        {
                                <p className="text-red-600 mt-2">{pError ? pError : ''}</p>
                             }
-                        </div>
                         <div>
                             <label className="label block my-2">
                                 <input type="checkbox" name='terms' defaultChecked 

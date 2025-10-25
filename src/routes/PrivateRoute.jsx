@@ -11,7 +11,6 @@ const PrivateRoute = ({children}) => {
         return <div className='flex justify-center items-center h-[500px]'>
                 <div class="loader"></div>
             </div>
-    
         }
     }
     

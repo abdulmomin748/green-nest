@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png'
 import { AuthContext } from '../AppContext/AppContext';
 import { IoIosArrowDown } from 'react-icons/io';
-import { FaRoute, FaUser } from 'react-icons/fa';
+import {  FaUser } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 const Header = () => {
@@ -37,7 +37,7 @@ const Header = () => {
         .then(() => {
             toast.success('Logout Successfully!')
         })
-        .catch(error => {
+        .catch(() => {
             // console.log(error.message);
         })
     }
@@ -49,13 +49,13 @@ const Header = () => {
                 <div class="navbar-start text-black ">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                         </div>
                         <ul
                             tabindex="0"
                             class="menu text-black menu-sm dropdown-content bg-base-100 rounded-box  mt-3 w-65 p-2 text-xl shadow pb-3 z-50">
                             <div class=" items-center flex justify-center p-5 border-b-2 mb-7 border-amber-400 border-dotted ">
-                               <Link to={'/'}><img  className='w-25' src={logo} alt="" srcset="" /></Link>
+                               <Link to={'/'}><img  className='w-25' src={logo} alt=""  /></Link>
                             </div>
                             {link}
                         </ul>
@@ -173,8 +173,6 @@ const Header = () => {
 
                 </div>
             </div>
-
-
 
         </div>
         </div>
