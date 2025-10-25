@@ -1,12 +1,26 @@
-import React, { use } from 'react';
-import { AuthContext } from '../AppContext/AppContext';
+import React, { use, useEffect } from 'react';
+import { AuthContext, LoadingContext } from '../AppContext/AppContext';
 import { FaMailBulk, FaSave, FaUser } from 'react-icons/fa';
 import { FaPhotoFilm } from 'react-icons/fa6';
 import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 
 const MyProfile = () => {
-    const {user,updateUserProfile, setUser} = use(AuthContext);
+    const {user,updateUserProfile, setUser,setLoading} = use(AuthContext);
+    //  const {loading,startLoading,stopLoading} = use(LoadingContext);
+
+    // useEffect(() =>{
+    //     startLoading();
+    //     setTimeout(() => {
+    //         stopLoading();
+    //     }, 700);
+    // },[])
+    // if(loading){
+    //     return <div className='flex justify-center items-center h-[300px]'>
+    //             <div class="loader"></div>
+    //         </div>
     
+    // }
     const handleUpdateProfile = e => {
 
         e.preventDefault();
@@ -15,11 +29,12 @@ const MyProfile = () => {
         
         updateUserProfile(name,photo)
         .then(() => {
+            setLoading(false)
             setUser({...user,displayName: name, photoURL: photo});
             console.log(user);
             const Toast = Swal.mixin({
             toast: true,
-            position: "top-end",
+            position: "bottom-start",
             showConfirmButton: false,
             timer: 2000,
             timerProgressBar: true,
@@ -36,7 +51,8 @@ const MyProfile = () => {
             title: "Profile Udpate successfully"
             });
         }).catch((error) => {
-            console.log(error.message);
+            // console.log(error.message);
+             toast.error(`${error.message}`)
         });
 
     }
@@ -52,7 +68,7 @@ const MyProfile = () => {
                     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     <div className="h-32 bg-gradient-to-b from-[#15b923] via-[#0a8d15] to-[#22a318]"></div>
 
-                    <div className="px-8 pb-8">
+                    <div className="md:px-8 px-4 pb-8">
                         {/* Avatar Section */}
                         <div className="flex flex-col items-center -mt-16 mb-8">
                             <div className="relative group">

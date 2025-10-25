@@ -4,18 +4,32 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { use, useState } from "react";
-import { AuthContext } from "../AppContext/AppContext";
+import { use, useEffect, useState } from "react";
+import { AuthContext, LoadingContext } from "../AppContext/AppContext";
 import { toast } from "react-toastify";
 const Register = () => {
+const {loading,startLoading,stopLoading} = use(LoadingContext);
 
-    const { crateUserEP,signInGoogle,updateUserProfile,setUser } = use(AuthContext);
+    
+
+    const { crateUserEP,signInGoogle,updateUserProfile,setUser,setLoading } = use(AuthContext);
     const [isOpen,setIsOpen] = useState(false);
     const [error,setError] = useState('');
     const [pError,setPError] = useState('');
     const location  = useLocation();
     const navigate = useNavigate();
+    useEffect(() =>{
+        startLoading();
+        setTimeout(() => {
+            stopLoading();
+        }, 700);
+    },[])
+    if(loading){
+        return <div className='flex justify-center items-center h-[300px]'>
+                <div class="loader"></div>
+            </div>
     
+    }
      const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -47,15 +61,16 @@ const Register = () => {
         crateUserEP(email,password)
         .then((result) => {
             const user = result.user;
-            
-            console.log(user);
-                setUser(user);
-            
             setError('')
             setPError('')
+            console.log('1',user);
+            setLoading(false)
+            
             updateUserProfile(name,photo).then(() => {
-                console.log('user update successfulyy!');
-                setUser(user);
+                console.log('2',user);
+                setUser({...user, displayName: name, photoURL: photo});
+                console.log('3',user);
+                setLoading(false)
             })
             toast.success(`Registerd successfully!`)
             navigate(location.state || '/')
@@ -92,28 +107,28 @@ const Register = () => {
 
                        
                         <label className="label">Name </label>
-                        <input type="text" name='name' className="input" placeholder="Your Name" required/>
+                        <input type="text" name='name' className="input w-full" placeholder="Your Name" required/>
 
                         <label className="label">Photo Url</label>
-                        <input type="url" name='photoUrl' className="input" placeholder="Photo Url" required/>
+                        <input type="url" name='photoUrl' className="input w-full" placeholder="Photo Url" required/>
 
 
                         <label className="label">Email</label>
 
-                        <input type="email" name='email' className="input" placeholder="Email" required/>
+                        <input type="email" name='email' className="input w-full" placeholder="Email" required/>
                         
                         <label className="label">Password</label>
                         
                         <div className='relative'>
                             <input 
                            
-                            className="input" 
+                            className="input w-full" 
                             name='password' 
-                            type={`${isOpen ? 'password': 'text'}`}
+                            type={`${isOpen ? 'text' : 'password'}`}
                             placeholder="Password" 
                             required/>
                             <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-5 bottom-3 z-40">
-                                {isOpen ? <FaRegEye /> : <FaRegEyeSlash />}
+                                {isOpen ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
                             {
                                <p className="text-red-600 mt-2">{pError ? pError : ''}</p>

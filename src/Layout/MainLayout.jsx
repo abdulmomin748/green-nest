@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../components/Header';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer';
-import Home from '../pages/Home';
 import RootProvider from '../provider/RootProvider';
 import { ToastContainer } from 'react-toastify'
 const MainLayout = () => {
@@ -15,8 +14,8 @@ const MainLayout = () => {
             <RootProvider plantsData = { plantsData }>
                 <Header />
                     <Outlet />
-                <Footer />
-                <ToastContainer autoClose={3000}/>
+                <Footer />  
+                <ToastContainer  autoClose={3000} position="bottom-left"/>
             </RootProvider>
         </div>
     );

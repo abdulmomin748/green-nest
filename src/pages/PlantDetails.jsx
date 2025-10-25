@@ -1,13 +1,26 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { PlantsDataContext } from '../AppContext/AppContext';
+import { LoadingContext, PlantsDataContext } from '../AppContext/AppContext';
 import Swal from 'sweetalert2';
 import { FaStar } from 'react-icons/fa';
 
 const PlantDetails = () => {
     const {id} = useParams();
     const plansData = use(PlantsDataContext);
+    const {loading,startLoading,stopLoading} = use(LoadingContext);
+
+    useEffect(() =>{
+        startLoading();
+        setTimeout(() => {
+            stopLoading();
+        }, 700);
+    },[])
+    if(loading){
+        return <div className='flex justify-center items-center h-[300px]'>
+                <div class="loader"></div>
+            </div>
     
+    }
     const filterPlantItem = plansData.find(plantItem => plantItem.plantId == id);
     // console.log(filterPlantItem);
     const {plantName,image,details,price,rating,availableStock,category} = filterPlantItem

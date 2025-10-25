@@ -8,14 +8,11 @@ const AuthProvider = ({children}) => {
 
     const [user,setUser] = useState(null);
     const [loading,setLoading] = useState(true);
-    console.log(user);
     
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
-            console.log(currentUser);
-            
         });
         return () => {
             unsubscribe();
@@ -23,7 +20,7 @@ const AuthProvider = ({children}) => {
     },[])
 
     const updateUserProfile = (name,photo) =>{
-        // setLoading(true);
+        setLoading(true);
         return updateProfile(auth.currentUser,{
             displayName: name,
             photoURL: photo,
@@ -51,7 +48,7 @@ const AuthProvider = ({children}) => {
 
     }
     const passwordReset = email => {
-        // setLoading(true);
+        setLoading(true);
         return sendPasswordResetEmail(auth,email);
 
     }
@@ -64,6 +61,7 @@ const AuthProvider = ({children}) => {
         signInEmailPassword,
         logOutUser,
         loading,
+        setLoading,
         updateUserProfile,
         passwordReset
 

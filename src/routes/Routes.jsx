@@ -5,6 +5,7 @@ import Plants from "../pages/Plants";
 import MyProfile from "../pages/MyProfile";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../pages/Home";
+import ErrorPage from "../pages/ErrorPage.jsx";
 import PlantDetails from "../pages/PlantDetails";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
@@ -14,10 +15,11 @@ import PrivateRoute from "./PrivateRoute";
         path: '/',
         element: <MainLayout />,
         loader: () => fetch('/plants.json'),
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,
-                Component: Home
+                element: <Home />
             },
             {
                 path: '/plants',

@@ -72,18 +72,18 @@ const Header = () => {
                         {link}
                     </ul>
                 </div>
-                <div className="navbar-end relative">
+                <div className="navbar-end relative z-10">
 
-                    {
-                        ! user ? (
-                    <div className='flex'>
+                    
+                       
+                    <div className={` ${user && 'hidden'} flex`}>
                           <Link to='/login' className="btn btn-link no-underline text-[#11224E]">Login</Link>
                         <Link to='/register' className="btn btn-outline text-[#11224E] bg-[11224E]]">Register</Link>
                     </div>
-                    )
-                    :        
-                    (
-                    <div className="relative" ref={dropdownRef}>
+                    
+                    
+                    
+                    <div className={` ${!user && 'hidden'} relative z-50`} ref={dropdownRef}>
 
                     {/* User button dropdown */}
                         <button
@@ -168,8 +168,8 @@ const Header = () => {
                             </div>
                             </div>
                         )}
-                    </div>)
-                    }
+                    </div>
+                    
 
                 </div>
             </div>

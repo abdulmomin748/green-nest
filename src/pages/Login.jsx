@@ -1,17 +1,31 @@
-import React, { use, useRef, useState } from 'react';
+import React, { use, useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate  } from 'react-router-dom';
-import { AuthContext, PlantsDataContext } from '../AppContext/AppContext';
+import { AuthContext, LoadingContext, PlantsDataContext } from '../AppContext/AppContext';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+    const {loading,startLoading,stopLoading} = use(LoadingContext);
+    
     const [error, setError] = useState('');
-    const plantsData = use(PlantsDataContext);
-    const { signInEmailPassword,signInGoogle,passwordReset } = use(AuthContext);
+    const { signInEmailPassword,signInGoogle,passwordReset,setLoading } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef();
     // console.log(location);
+
+    useEffect(() =>{
+        startLoading();
+        setTimeout(() => {
+            stopLoading();
+        }, 700);
+    },[])
+    if(loading){
+        return <div className='flex justify-center items-center h-[300px]'>
+                <div class="loader"></div>
+            </div>
+    }
+
     
     const handleSignIn = e => {
         e.preventDefault();
@@ -24,6 +38,8 @@ const Login = () => {
             setError('')
             navigate(location.state || '/');
             toast.success('Login successfully!')
+            setLoading(false)
+
         })
         .catch(error => {
             // console.log(error.message);
@@ -37,6 +53,8 @@ const Login = () => {
             // console.log(result.user);
             navigate(location.state || '/');
             toast.success('Login successfully!')
+            setLoading(false)
+            
         })
         .catch(error => {
             // console.log(error.message);
@@ -50,6 +68,8 @@ const Login = () => {
         .then( ()=> {
             // console.log('password reset');
             toast.success(`Password reset email sent-${email}`)
+            setLoading(false)
+
         })
         .catch( error => {
             // console.log(error.message);
@@ -63,7 +83,7 @@ const Login = () => {
             <div className=" pb-10">
                 <h1 className='text-4xl text-center text-black mt-10'>Login Now</h1>
 
-
+            
                 <div className="card-body card bg-base-100 w-full max-w-sm m-auto my-10 ">
                     
                     <form onSubmit={handleSignIn}>
@@ -71,13 +91,13 @@ const Login = () => {
                         <fieldset className="fieldset">
                         <label className="label">Email</label>
 
-                        <input ref={emailRef} type="email" name='email' className="input" placeholder="Email" required/>
+                        <input ref={emailRef} type="email" name='email' className="input w-full" placeholder="Email" required/>
                         
                         <label className="label">Password</label>
                         <div className='relative'>
                             <input 
                             type=''
-                            className="input" 
+                            className="input w-full" 
                             name='password' 
                             placeholder="Password" 
                             required

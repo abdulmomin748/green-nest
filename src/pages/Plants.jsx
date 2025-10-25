@@ -1,9 +1,24 @@
-import React, { use } from 'react';
-import { PlantsDataContext } from '../AppContext/AppContext';
+import React, { use, useEffect } from 'react';
+import { LoadingContext, PlantsDataContext } from '../AppContext/AppContext';
 import PlantItemCard from '../components/PlantItemCard';
 
 const Plants = () => {
     const plantsData = use(PlantsDataContext);
+    const {loading,startLoading,stopLoading} = use(LoadingContext);
+
+    useEffect(() =>{
+        startLoading();
+        setTimeout(() => {
+            stopLoading();
+        }, 700);
+    },[])
+    if(loading){
+        return <div className='flex justify-center items-center h-[300px]'>
+                <div class="loader"></div>
+            </div>
+    
+    }
+    
     return (
         <div className='pb-20'>
             <div className='c-container'>
