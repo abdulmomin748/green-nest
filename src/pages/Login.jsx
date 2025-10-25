@@ -3,15 +3,17 @@ import { Link, Navigate, useLocation, useNavigate  } from 'react-router-dom';
 import { AuthContext, LoadingContext, PlantsDataContext } from '../AppContext/AppContext';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
-
+import { FaRegEye  } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa6";
 const Login = () => {
     const {loading,startLoading,stopLoading} = use(LoadingContext);
-    
+    const [isOpen,setIsOpen] = useState(false);
     const [error, setError] = useState('');
-    const { signInEmailPassword,signInGoogle,passwordReset,setLoading } = use(AuthContext);
+    const { signInEmailPassword,signInGoogle,setLoading } = use(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef();
+    const [email,setEmail] = useState('');
     // console.log(location);
 
     useEffect(() =>{
@@ -61,6 +63,7 @@ const Login = () => {
             toast.error(`${error.message}`)
         })
      }
+     console.log(email);
      
      document.title = "Login Page";
     return (
@@ -76,7 +79,7 @@ const Login = () => {
                         <fieldset className="fieldset">
                         <label className="label">Email</label>
 
-                        <input ref={emailRef} type="email" name='email' className="input w-full" placeholder="Email" required/>
+                        <input ref={emailRef} type="email"  onChange={(e) => setEmail(e.target.value)}  value={email} name='email' className="input w-full" placeholder="Email" required/>
                         
                         <label className="label">Password</label>
                         <div className='relative'>
@@ -87,12 +90,12 @@ const Login = () => {
                             placeholder="Password" 
                             required
                             />
-                            <span className='absolute p-2 cursor-pointer right-5 z-50  text-xl top-1'>
-                            
+                            <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-3 bottom-0 z-40">
+                                {isOpen ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
                         </div>
                         <div>
-                            <Link to={'/resetPassword'} className="link link-hover mt-2 inline-block">Forgot password?</Link>
+                            <Link state={email} to={'/resetPassword'} className="link link-hover mt-2 inline-block">Forgot password?</Link>
                             {
                                 <p className="text-red-600 my-2">{error ? error : ''}</p>
                             }

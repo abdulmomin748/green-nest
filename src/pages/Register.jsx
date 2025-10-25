@@ -1,5 +1,5 @@
 
-import { FaEye, FaRegEye  } from "react-icons/fa";
+import { FaRegEye  } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
@@ -127,7 +127,7 @@ const {loading,startLoading,stopLoading} = use(LoadingContext);
                             type={`${isOpen ? 'text' : 'password'}`}
                             placeholder="Password" 
                             required/>
-                            <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-5 bottom-3 z-40">
+                            <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-3 bottom-2 z-40">
                                 {isOpen ? <FaRegEyeSlash /> : <FaRegEye />}
                             </span>
                             {

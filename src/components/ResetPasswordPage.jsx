@@ -1,10 +1,13 @@
 import { use } from "react";
 import { AuthContext } from "../AppContext/AppContext";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 const ResetPasswordPage = () => {
     const { passwordReset,setLoading } = use(AuthContext);
-
+    const location = useLocation();
+    console.log(location);
+    
     const handleResetPasword = e => {
         e.preventDefault();
         const email = e.target.email.value
@@ -29,7 +32,8 @@ const ResetPasswordPage = () => {
                 <fieldset className="fieldset">
                     <label className="label text-xl">Email</label>
 
-                    <input type="email" name='email' className="input text-xl py-7 w-full" placeholder="Write Your email here........" required/>
+                    <input type="email" value={location.state} name='email' className="input text-xl py-7 w-full" placeholder="Write Your email here........" required/>
+                    
                 </fieldset>
                 <input type='submit' className="btn text-[15px] mt-3 w-full font-semibold btn-neutral" placeholder='red'
                 value='Reset your email password'
