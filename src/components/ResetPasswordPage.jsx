@@ -27,7 +27,8 @@ const ResetPasswordPage = () => {
      }
      
     return (
-        <div className='max-w-100 m-auto py-50'>
+        <div className="c-container">
+            <div className='max-w-100 m-auto py-40'>
             <h2 className='text-3xl mb-6'>Reset your password</h2>
              <form onSubmit={handleResetPasword}>
                 <fieldset className="fieldset">
@@ -40,6 +41,7 @@ const ResetPasswordPage = () => {
                 value='Reset your email password'
                 ></input>
             </form>
+        </div>
         </div>
     );
 };
