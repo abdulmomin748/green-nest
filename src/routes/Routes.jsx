@@ -41,7 +41,9 @@ import PrivateRoute from "./PrivateRoute";
             },
             {
                 path: '/register',
-                element: <Register/>
+                element: 
+                    <Register/>
+                
             }
         ]
     },

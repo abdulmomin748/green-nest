@@ -9,7 +9,7 @@ const PlantDetails = () => {
     const plansData = use(PlantsDataContext);
     
     const filterPlantItem = plansData.find(plantItem => plantItem.plantId == id);
-    console.log(filterPlantItem);
+    // console.log(filterPlantItem);
     const {plantName,image,details,price,rating,availableStock,category} = filterPlantItem
     
     const handleBookNow = e => {

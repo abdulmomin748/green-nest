@@ -5,16 +5,18 @@ import { FaPhotoFilm } from 'react-icons/fa6';
 import Swal from 'sweetalert2';
 
 const MyProfile = () => {
-    const {user,updateUserProfile} = use(AuthContext);
+    const {user,updateUserProfile, setUser} = use(AuthContext);
     
     const handleUpdateProfile = e => {
 
         e.preventDefault();
         const name = e.target.dName.value;
         const photo = e.target.pUrl.value;
-        console.log(name,photo);
+        
         updateUserProfile(name,photo)
         .then(() => {
+            setUser({...user,displayName: name, photoURL: photo});
+            console.log(user);
             const Toast = Swal.mixin({
             toast: true,
             position: "top-end",

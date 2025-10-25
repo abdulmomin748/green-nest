@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExpertCadItem = ({expertItem}) => {
     const {name,image,title} = expertItem;
-    console.log(name,image,title);
+    // console.log(name,image,title);
     
     
     return (

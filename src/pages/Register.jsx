@@ -1,5 +1,5 @@
 
-import { FaRegEye  } from "react-icons/fa";
+import { FaEye, FaRegEye  } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
@@ -9,7 +9,8 @@ import { AuthContext } from "../AppContext/AppContext";
 import { toast } from "react-toastify";
 const Register = () => {
 
-    const { crateUserEP,signInGoogle,updateUserProfile } = use(AuthContext);
+    const { crateUserEP,signInGoogle,updateUserProfile,setUser } = use(AuthContext);
+    const [isOpen,setIsOpen] = useState(false);
     const [error,setError] = useState('');
     const [pError,setPError] = useState('');
     const location  = useLocation();
@@ -46,27 +47,36 @@ const Register = () => {
         crateUserEP(email,password)
         .then((result) => {
             const user = result.user;
+            
+            console.log(user);
+                setUser(user);
+            
             setError('')
             setPError('')
-            updateUserProfile(name,photo);
+            updateUserProfile(name,photo).then(() => {
+                console.log('user update successfulyy!');
+                setUser(user);
+            })
             toast.success(`Registerd successfully!`)
             navigate(location.state || '/')
         })
         .catch((error) => {
             const errorMessage = error.message;
             setError(errorMessage)
+            console.log(error);
+            
         });
      }  
      
      const handleSignInGoogle = () => {
         signInGoogle()
         .then(result => {
-            console.log(result.user);
+            // console.log(result.user);
             toast.success(`Login successfully!`)
             navigate(location.state || '/')
         })
         .catch(error => {
-            console.log(error.message);
+            // console.log(error.message);
             toast.error(`${error.message}`)
         })
      }
@@ -99,8 +109,12 @@ const Register = () => {
                            
                             className="input" 
                             name='password' 
+                            type={`${isOpen ? 'password': 'text'}`}
                             placeholder="Password" 
                             required/>
+                            <span onClick={() => setIsOpen(!isOpen)} className="text-xl p-2 cursor-pointer absolute right-5 bottom-3 z-40">
+                                {isOpen ? <FaRegEye /> : <FaRegEyeSlash />}
+                            </span>
                             {
                                <p className="text-red-600 mt-2">{pError ? pError : ''}</p>
                             }

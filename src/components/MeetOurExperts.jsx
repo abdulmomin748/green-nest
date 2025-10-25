@@ -10,7 +10,7 @@ const MeetOurExperts = () => {
             .then(data => setExpertP(data))
     
         },[])
-        console.log(expertP );
+        // console.log(expertP );
         
     return (
         <div className='pb-20'>

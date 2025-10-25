@@ -8,52 +8,57 @@ const AuthProvider = ({children}) => {
 
     const [user,setUser] = useState(null);
     const [loading,setLoading] = useState(true);
-
+    console.log(user);
+    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            setLoading(false)
+            setLoading(false);
+            console.log(currentUser);
+            
         });
         return () => {
             unsubscribe();
         }
     },[])
-    const updateUserProfile = ( name, photo ) =>{
 
+    const updateUserProfile = (name,photo) =>{
+        // setLoading(true);
         return updateProfile(auth.currentUser,{
             displayName: name,
             photoURL: photo,
         })
-        
+        // return updateProfile(auth.currentUser,updatedNamePhoto)
     }
     const crateUserEP = (email, password) => {
-
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
 
     }
     const signInGoogle = () => {
-
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
 
     }
     const signInEmailPassword = (email,password) => {
-
+        setLoading(true);
         return signInWithEmailAndPassword(auth,email,password);
 
     }
     const logOutUser = () => {
-
+        setLoading(true);
         return signOut(auth);
 
     }
     const passwordReset = email => {
-
+        // setLoading(true);
         return sendPasswordResetEmail(auth,email);
 
     }
     const userInfo = {
 
         user,
+        setUser,
         crateUserEP,
         signInGoogle,
         signInEmailPassword,

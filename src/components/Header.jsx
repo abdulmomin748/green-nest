@@ -16,7 +16,7 @@ const Header = () => {
             <NavLink to="/myProfile">My Profile</NavLink>
         </>
     );
-    console.log(user);
+    // console.log(user);
     
 
     // DROP DOWN FUNCTIONALITIES
@@ -38,7 +38,7 @@ const Header = () => {
             toast.success('Logout Successfully!')
         })
         .catch(error => {
-            console.log(error.message);
+            // console.log(error.message);
         })
     }
     
@@ -149,7 +149,7 @@ const Header = () => {
                                 <Link
                                 to={'/myProfile'}
                                 onClick={() => {
-                                    console.log('Profile clicked');
+                                    // console.log('Profile clicked');
                                     setIsOpen(false);
                                 }}
                                 className="w-full flex items-center space-x-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 transition-colors duration-150"

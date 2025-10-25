@@ -7,7 +7,7 @@ const FeaturedPlantItem = () => {
 
     const plantsData = use(PlantsDataContext);    
     const featuredPlant = plantsData.find(plantItem => plantItem?.isFeatured == true);
-    console.log(featuredPlant);
+    // console.log(featuredPlant);
     
 
     return (
