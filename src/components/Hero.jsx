@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { use,} from 'react';
 
 
 // swiper functionalities
