@@ -6,7 +6,7 @@ A responsive plant care & store platform built with React and Firebase.
 [🌐 View Live Site](https://green-nest-9.firebaseapp.com/)
 
 ## Repository
-[📂 GitHub Repo](https://github.com/programming-hero-web-course2/b12-a9-firesheild-abdulmomin748)
+[📂 GitHub Repo](https://github.com/abdulmomin748/green-nest)
 
 ---
 
